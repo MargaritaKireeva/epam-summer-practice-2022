@@ -29,7 +29,7 @@ namespace AchievementsAccounting
             userBL = new UserBL();
             accountBL = new AccountBL();
             InitializeComponent();
-            roleComboBox.ItemsSource = new List <string> { "Администратор", "Пользователь" };
+            roleComboBox.ItemsSource = new List<string> { "Администратор", "Пользователь" };
         }
 
         private void addUserButton_Click(object sender, RoutedEventArgs e)
@@ -55,6 +55,7 @@ namespace AchievementsAccounting
                 user = userBL.AddUser(user);
                 Account account = new Account(user.ID, loginTextBox.Text, passwordBox.Password, roleComboBox.Text);
                 accountBL.AddAccount(account);
+                MessageBox.Show("Пользователь удачно зарегистрирован!");
                 Close();
             }            
         }

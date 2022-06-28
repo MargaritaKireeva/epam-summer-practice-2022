@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AccountBL.cs" />
     <Compile Include="AchievementBL.cs" />
+    <Compile Include="AchievementUserConnectionBL.cs" />
     <Compile Include="UserBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

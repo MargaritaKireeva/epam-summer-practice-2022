@@ -10,5 +10,6 @@ namespace AchievementsAccounting.DAL.Interfaces
         void RemoveAccount(int id);
         void EditAccount(Account account);
         IEnumerable<Account> GetAllAccounts();
+        Account SearchAccountForAuth(string login, string password);
     }
 }

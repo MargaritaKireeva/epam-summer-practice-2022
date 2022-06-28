@@ -31,6 +31,10 @@ namespace AchievementsAccounting.BLL
         {
             return accountDAO.GetAllAccounts();
         }
+        public Account SearchAccountForAuth(string login, string password)
+        {
+            return accountDAO.SearchAccountForAuth(login, password);
+        }
 
     }
 }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="IAccountDAO.cs" />
     <Compile Include="IAchievementDAO.cs" />
+    <Compile Include="IAchievementUserConnectionDAO.cs" />
     <Compile Include="IUserDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

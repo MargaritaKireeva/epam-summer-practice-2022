@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="AccountDAO.cs" />
     <Compile Include="AchievementDAO.cs" />
+    <Compile Include="AchievementUserConnectionDAO.cs" />
     <Compile Include="UserDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

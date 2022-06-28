@@ -26,12 +26,16 @@ namespace AchievementsAccounting
         private IAccountBL accountBL;
         User user;
         Account account;
+        public  User newUser;
+        public Account newAccount;
         public EditUserWindow(User user, Account account)
         {
             userBL = new UserBL();
             accountBL = new AccountBL();
             this.user = user;
             this.account = account;
+            newUser = user;
+            newAccount = account;
             InitializeComponent();
             nameTextBox.Text = user.Name;
             birthdayDatePiker.SelectedDate = user.Birthday;
@@ -62,9 +66,9 @@ namespace AchievementsAccounting
             {
                 if (descriptionTextBox.Text != "")
                     description = descriptionTextBox.Text;
-                User newUser = new User(user.ID, nameTextBox.Text, (DateTime)birthdayDatePiker.SelectedDate, description);
+                newUser = new User(user.ID, nameTextBox.Text, (DateTime)birthdayDatePiker.SelectedDate, description);
                 userBL.EditUser(newUser);
-                Account newAccount = new Account(user.ID, loginTextBox.Text, passwordBox.Password, roleComboBox.Text);
+                newAccount = new Account(user.ID, loginTextBox.Text, passwordBox.Password, roleComboBox.Text);
                 accountBL.EditAccount(newAccount);
                 Close();
             }

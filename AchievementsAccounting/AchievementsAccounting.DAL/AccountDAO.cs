@@ -80,5 +80,31 @@ namespace AchievementsAccounting.DAL
             }
             return accountList;
         }
+
+        public Account SearchAccountForAuth(string login, string password)
+        {
+            Account account = new Account();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SearchAccountForAuth";
+                cmd.Parameters.AddWithValue(@"UserLogin", login);
+                cmd.Parameters.AddWithValue(@"UserPassword", password);
+                connection.Open();
+                var reader = cmd.ExecuteReader();
+                reader.Read();
+                if (reader.HasRows)
+                    account = new Account
+                    {
+                        UserID = (int)reader["UserID"],
+                        UserLogin = (string)reader["UserLogin"],
+                        UserPassword = (string)reader["UserPassword"],
+                        UserRole = (string)reader["UserRole"]
+                    };
+                else return null;
+            }
+            return account;
+        }
     }
 }

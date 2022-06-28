@@ -95,23 +95,23 @@ DELETE FROM AchievementUserConnection
 WHERE UserID = @UserID AND AchievementID = @AchievementID
 GO
 
-CREATE PROCEDURE UpdateAchievementUserConnection
-@UserID INT,
-@OldAchievementID INT,
-@NewAchievementID INT
-AS
-UPDATE AchievementUserConnection
-SET UserID = @UserID, AchievementID = @AchievementID
-WHERE UserID = @UserID AND AchievementID = @OldAchievementID
-GO
+--CREATE PROCEDURE UpdateAchievementUserConnection
+--@UserID INT,
+--@OldAchievementID INT,
+--@NewAchievementID INT
+--AS
+--UPDATE AchievementUserConnection
+--SET UserID = @UserID, AchievementID = @AchievementID
+--WHERE UserID = @UserID AND AchievementID = @OldAchievementID
+--GO
 
-CREATE PROCEDURE GetAllAchievementsByUser
+ALTER PROCEDURE GetAllAchievementsByUser
 @UserID INT
 AS 
-SELECT ach.Name
+SELECT ach.ID, ach.Name, ach.[Description]
 FROM AchievementUserConnection AS achUser
 INNER JOIN Achievements AS ach ON ach.ID = achUser.AchievementID
-WHERE achUser.UserID = 1
+WHERE achUser.UserID = @UserID
 GO
 
 CREATE PROCEDURE InsertAccount
@@ -157,5 +157,13 @@ SELECT * FROM Users
 WHERE ID = @UserID
 GO
 
+CREATE PROCEDURE SearchAccountForAuth
+@UserLogin nvarchar(30),
+@UserPassword nvarchar(15)
+AS
+SELECT * FROM Accounts
+WHERE UserLogin = @UserLogin AND UserPassword = @UserPassword
+GO
 
-select * from Achievements
+
+--select * from Achievements

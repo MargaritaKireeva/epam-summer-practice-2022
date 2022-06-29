@@ -2,6 +2,7 @@ CREATE DATABASE AchievementsAccountingDB
 COLLATE Cyrillic_General_100_CI_AI
 GO
 
+USE AchievementsAccountingDB
 
 CREATE TABLE [Users] (
   [ID] int IDENTITY(1,1) NOT NULL CONSTRAINT [PK_Users] PRIMARY KEY,

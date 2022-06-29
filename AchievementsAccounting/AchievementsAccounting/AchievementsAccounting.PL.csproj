@@ -150,5 +150,11 @@
       <Name>AchievementsAccounting.Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="searchmagnifierinterfacesymbol1_79893.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="iconfinder-search-4341327_120553.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

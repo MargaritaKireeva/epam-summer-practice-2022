@@ -1,3 +1,5 @@
+USE AchievementsAccountingDB
+
 CREATE PROCEDURE InsertUser
 @ID INT OUTPUT,
 @Name nvarchar(50),
@@ -165,5 +167,9 @@ SELECT * FROM Accounts
 WHERE UserLogin = @UserLogin AND UserPassword = @UserPassword
 GO
 
-
---select * from Achievements
+ALTER PROCEDURE SearchAchievementByDescription
+@Description varchar(255)
+AS
+SELECT * FROM Achievements WHERE [Description] LIKE '%' + @Description + '%'
+OR Name LIKE '%' + @Description + '%'
+GO

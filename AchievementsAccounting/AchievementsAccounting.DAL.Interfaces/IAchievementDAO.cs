@@ -13,5 +13,6 @@ namespace AchievementsAccounting.DAL.Interfaces
         void RemoveAchievement(int id);
         void EditAchievement(Achievement achievement);
         IEnumerable<Achievement> GetAllAchievements();
+        IEnumerable<Achievement> SearchAchievementByDescription(string description);
     }
 }

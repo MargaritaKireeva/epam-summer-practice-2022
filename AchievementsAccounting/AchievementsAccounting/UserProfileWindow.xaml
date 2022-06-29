@@ -12,7 +12,7 @@
         <TextBox x:Name="userInfoTextBox" HorizontalAlignment="Left" Height="182" Margin="463,15,0,0" TextWrapping="Wrap" Text="Информация о пользователе:" VerticalAlignment="Top" Width="368" FontSize="14" IsReadOnly="True"/>
         <TextBox x:Name="achievementInfoTextBox" HorizontalAlignment="Left" Height="153" Margin="463,278,0,0" TextWrapping="Wrap" Text="Информация о достижении: &#xD;&#xA;Выберите достижение        " VerticalAlignment="Top" Width="368" FontSize="14" IsReadOnly="True"/>
         <ListBox x:Name="achievementsListBox" HorizontalAlignment="Left" Height="377" Margin="22,66,0,0" VerticalAlignment="Top" Width="199" SelectionChanged="achievementsListBoxSelectionChanged"/>
-        <ComboBox x:Name="achievementsComboBox" HorizontalAlignment="Left" Margin="243,66,0,0" VerticalAlignment="Top" Width="204" FontSize="14"/>
+        <ComboBox x:Name="achievementsComboBox" HorizontalAlignment="Left" Margin="243,66,0,0" VerticalAlignment="Top" Width="204" FontSize="14" SelectionChanged="achievementsComboBox_SelectionChanged"/>
         <Button x:Name="addAchievementButton" Content="Добавить достижение" HorizontalAlignment="Left" Margin="243,15,0,0" VerticalAlignment="Top" Width="204" Height="32" FontSize="14" Click="addAchievementButton_Click"/>
         <Label Content="Чтобы добавить достижение, &#xD;&#xA;выберите его в выпадающем&#xD;&#xA;списке и нажмите &quot;Добавить&#xD;&#xA;достижение&quot;" HorizontalAlignment="Left" Margin="243,107,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.269,-0.407" Height="90" Width="204" FontSize="14"/>
         <Label Content="          Мои достижения" HorizontalAlignment="Left" Margin="22,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.269,-0.407" Height="32" Width="199" FontSize="14"/>

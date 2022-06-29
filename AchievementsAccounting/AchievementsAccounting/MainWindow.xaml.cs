@@ -26,11 +26,13 @@ namespace AchievementsAccounting
         private IUserBL userBL;
         private IAccountBL accountBL;
         private IAchievementBL achievementBL;
-        public MainWindow()
+        Account account;
+        public MainWindow(Account account)
         {
             userBL = new UserBL();
             accountBL = new AccountBL();
             achievementBL = new AchievementBL();
+            this.account = account;
             InitializeComponent();
             accountsListBox.ItemsSource = accountBL.GetAllAccounts();
             achievementsListBox.ItemsSource = achievementBL.GetAllAchievements();
@@ -135,6 +137,31 @@ namespace AchievementsAccounting
                     $"Название: {achievement.Name} \n" +
                     $"Описание: {achievement.Description} \n";
             }
+        }
+
+        private void showProfileButton_Click(object sender, RoutedEventArgs e)
+        {
+            UserProfileWindow userProfileWindow = new UserProfileWindow(account);
+            userProfileWindow.Show();
+        }
+
+       
+
+        private void searchAchievementButton_Click(object sender, RoutedEventArgs e)
+        {
+            achievementsListBox.ItemsSource = achievementBL.SearchAchievementByDescription(searchAchievementTextBox.Text);
+        }
+
+        private void showAllAchievementsButton_Click(object sender, RoutedEventArgs e)
+        {
+            achievementsListBox.ItemsSource = achievementBL.GetAllAchievements();
+            searchAchievementTextBox.Text = "(Искать достижение)";
+        }
+
+
+        private void searchAchievementTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            searchAchievementTextBox.Text = "";
         }
     }
 }

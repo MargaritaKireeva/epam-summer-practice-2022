@@ -43,12 +43,17 @@ namespace AchievementsAccounting
                     MessageBox.Show("Неправильный логин или пароль!");
                 else
                 {
+                    
                     if (account.UserRole.Equals("Администратор"))
-                        window = new MainWindow();
+                        window = new MainWindow(account);
                     else
                         window = new UserProfileWindow(account);
+                    window.Closed += (sender1, e1) =>
+                    {
+                        Close();
+                    };
                     window.Show();
-                    //Hide();
+                    Hide();
                 }               
             }
         }

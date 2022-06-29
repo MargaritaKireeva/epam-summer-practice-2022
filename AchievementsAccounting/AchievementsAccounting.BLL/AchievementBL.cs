@@ -31,5 +31,9 @@ namespace AchievementsAccounting.BLL
         {
             return achievementDAO.GetAllAchievements();
         }
+        public IEnumerable<Achievement> SearchAchievementByDescription(string description)
+        {
+            return achievementDAO.SearchAchievementByDescription(description);
+        }
     }
 }

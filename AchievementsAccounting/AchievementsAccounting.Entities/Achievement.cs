@@ -29,7 +29,7 @@ namespace AchievementsAccounting.Entities
         }
         public override string ToString()
         {
-            return $"{ID}. {Name}";
+            return $"{Name}";
 
         }
     }

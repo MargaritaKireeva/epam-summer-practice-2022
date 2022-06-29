@@ -122,7 +122,18 @@ namespace AchievementsAccounting
         {
             AuthenticationWindow authenticationWindow = new AuthenticationWindow();
             authenticationWindow.Show();
-            //Hide();
+            Close();
+        }
+
+        private void achievementsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (achievementsComboBox.SelectedItem != null)
+            {
+                Achievement achievement = (Achievement)achievementsComboBox.SelectedItem;
+                achievementInfoTextBox.Text = $"Информация о достижении: \n" +
+                    $"Название: {achievement.Name} \n" +
+                    $"Описание: {achievement.Description} \n";
+            }
         }
     }
 }

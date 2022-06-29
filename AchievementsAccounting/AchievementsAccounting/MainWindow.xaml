@@ -7,17 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="505.615" Width="822.348">
     <Grid>
-        <ListBox x:Name="accountsListBox" HorizontalAlignment="Left" Height="100" Margin="288,31,0,0" VerticalAlignment="Top" Width="182" SelectionChanged="accountsListBoxSelectionChanged"/>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <ListBox x:Name="accountsListBox" HorizontalAlignment="Left" Height="100" Margin="299,67,0,0" VerticalAlignment="Top" Width="182" SelectionChanged="accountsListBoxSelectionChanged"/>
         <Button x:Name="addUserButton" Content="Добавить пользователя" HorizontalAlignment="Left" Margin="29,31,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="addUserButton_Click"/>
-        <Button x:Name="removeUserButton" Content="Удалить пользователя" HorizontalAlignment="Left" Margin="29,99,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="removeUserButton_Click"/>
-        <Button x:Name="editUserButton" Content="Редактировать пользователя" HorizontalAlignment="Left" Margin="29,167,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="editUserButton_Click"/>
+        <Button x:Name="removeUserButton" Content="Удалить пользователя" HorizontalAlignment="Left" Margin="29,85,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="removeUserButton_Click"/>
+        <Button x:Name="editUserButton" Content="Редактировать пользователя" HorizontalAlignment="Left" Margin="29,135,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="editUserButton_Click"/>
         <TextBox x:Name="userInfoTextBox" HorizontalAlignment="Left" Height="168" Margin="572,31,0,0" TextWrapping="Wrap" Text="Информация о пользователе:
                  Выберите пользователя" VerticalAlignment="Top" Width="203" FontSize="14" IsReadOnly="True"/>
         <Button x:Name="addAchievementButton" Content="Добавить достижение" HorizontalAlignment="Left" Margin="29,283,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="addAchievementButton_Click"/>
         <Button x:Name="removeAchievementButton" Content="Удалить достижение" HorizontalAlignment="Left" Margin="29,341,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="removeAchievementButton_Click"/>
         <Button x:Name="editAchievementButton" Content="Редактировать достижение" HorizontalAlignment="Left" Margin="29,396,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="editAchievementButton_Click"/>
-        <ListBox x:Name="achievementsListBox" HorizontalAlignment="Left" Height="100" Margin="288,283,0,0" VerticalAlignment="Top" Width="182" SelectionChanged="achievementsListBoxSelectionChanged"/>
+        <ListBox x:Name="achievementsListBox" HorizontalAlignment="Left" Height="100" Margin="299,317,0,0" VerticalAlignment="Top" Width="182" SelectionChanged="achievementsListBoxSelectionChanged" RenderTransformOrigin="0.699,1.117"/>
         <TextBox x:Name="achievementInfoTextBox" HorizontalAlignment="Left" Height="168" Margin="572,283,0,0" TextWrapping="Wrap" Text="Информация о достижении:                  Выберите достижение" VerticalAlignment="Top" Width="203" FontSize="14" IsReadOnly="True"/>
+        <Label Content="Пользователи" HorizontalAlignment="Left" Margin="299,31,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Достижения" HorizontalAlignment="Left" Margin="299,283,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Button x:Name="showProfileButton" Content="Показать профиль" HorizontalAlignment="Left" Margin="29,207,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="showProfileButton_Click"/>
+        <TextBox x:Name="searchAchievementTextBox" HorizontalAlignment="Left" Height="32" Margin="299,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" FontSize="14" Text="(Искать достижение)" GotFocus="searchAchievementTextBox_GotFocus"/>
+        <Button x:Name="searchAchievementButton" Content="" HorizontalAlignment="Left" Margin="510,246,0,0" VerticalAlignment="Top" Width="36" Height="32" FontSize="14" RenderTransformOrigin="0.024,0.452" BorderBrush="White" Click="searchAchievementButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="searchmagnifierinterfacesymbol1_79893.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="showAllAchievementsButton" Content="Показать все достижения" HorizontalAlignment="Left" Margin="299,431,0,0" VerticalAlignment="Top" Width="182" Height="30" FontSize="14" Click="showAllAchievementsButton_Click"/>
 
     </Grid>
 </Window>

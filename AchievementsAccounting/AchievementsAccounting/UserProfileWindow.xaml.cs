@@ -37,7 +37,6 @@ namespace AchievementsAccounting
             this.account = account;
             user = userBL.GetUserByID(account.UserID);
             InitializeComponent();
-            achievementsComboBox.ItemsSource = achievementBL.GetAllAchievements();
             achievementsListBox.ItemsSource = achievementUserConnectionBL.GetAllAchievementsByUser(user.ID);
             userInfoTextBox.Text = $"Информация о пользователе: \n" +
                     $"Имя: {user.Name} \n" +
@@ -49,17 +48,11 @@ namespace AchievementsAccounting
         }
 
         private void addAchievementButton_Click(object sender, RoutedEventArgs e)
-        {            
-            if (achievementsComboBox.SelectedItem != null)
-            {
-                Achievement achievement = (Achievement)achievementsComboBox.SelectedItem;
-                achievementUserConnectionBL.AddAchievementUserConnection(user.ID, achievement.ID);
-                achievementsListBox.ItemsSource = achievementUserConnectionBL.GetAllAchievementsByUser(user.ID);
-            }
-            else
-            {
-                MessageBox.Show("Чтобы добавить достижение, выберите его в списке!");
-            }
+        {
+            AddAchievementUserWindow addAchievementUserWindow = new AddAchievementUserWindow(user);
+            addAchievementUserWindow.ShowDialog();
+            achievementsListBox.ItemsSource = achievementUserConnectionBL.GetAllAchievementsByUser(user.ID);
+
         }
 
         private void removeAchievementButton_Click(object sender, RoutedEventArgs e)
@@ -125,15 +118,5 @@ namespace AchievementsAccounting
             Close();
         }
 
-        private void achievementsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (achievementsComboBox.SelectedItem != null)
-            {
-                Achievement achievement = (Achievement)achievementsComboBox.SelectedItem;
-                achievementInfoTextBox.Text = $"Информация о достижении: \n" +
-                    $"Название: {achievement.Name} \n" +
-                    $"Описание: {achievement.Description} \n";
-            }
-        }
     }
 }

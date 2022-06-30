@@ -25,11 +25,7 @@
         <Label Content="Достижения" HorizontalAlignment="Left" Margin="299,283,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Button x:Name="showProfileButton" Content="Показать профиль" HorizontalAlignment="Left" Margin="29,207,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="showProfileButton_Click"/>
         <TextBox x:Name="searchAchievementTextBox" HorizontalAlignment="Left" Height="32" Margin="299,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" FontSize="14" Text="(Искать достижение)" GotFocus="searchAchievementTextBox_GotFocus"/>
-        <Button x:Name="searchAchievementButton" Content="" HorizontalAlignment="Left" Margin="510,246,0,0" VerticalAlignment="Top" Width="36" Height="32" FontSize="14" RenderTransformOrigin="0.024,0.452" BorderBrush="White" Click="searchAchievementButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="searchmagnifierinterfacesymbol1_79893.png"/>
-            </Button.Background>
-        </Button>
+        <Button x:Name="searchAchievementButton" Content="Поиск" HorizontalAlignment="Left" Margin="510,246,0,0" VerticalAlignment="Top" Width="53" Height="32" FontSize="14" RenderTransformOrigin="0.024,0.452" Click="searchAchievementButton_Click"/>
         <Button x:Name="showAllAchievementsButton" Content="Показать все достижения" HorizontalAlignment="Left" Margin="299,431,0,0" VerticalAlignment="Top" Width="182" Height="30" FontSize="14" Click="showAllAchievementsButton_Click"/>
 
     </Grid>

@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using AchievementsAccounting.BLL;
 using AchievementsAccounting.Entities;
 using AchievementsAccounting.BLL.Interfaces;
+using AchievementsAccounting.Dependencies;
 
 namespace AchievementsAccounting
 {
@@ -26,8 +27,8 @@ namespace AchievementsAccounting
         private IAccountBL accountBL;
         public AddUserWindow()
         {
-            userBL = new UserBL();
-            accountBL = new AccountBL();
+            userBL = DependencyResolver.Instance.UserBL;
+            accountBL = DependencyResolver.Instance.AccountBL;
             InitializeComponent();
             roleComboBox.ItemsSource = new List<string> { "Администратор", "Пользователь" };
         }

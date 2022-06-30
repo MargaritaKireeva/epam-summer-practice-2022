@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using AchievementsAccounting.BLL.Interfaces;
 using AchievementsAccounting.BLL;
 using AchievementsAccounting.Entities;
+using AchievementsAccounting.Dependencies;
 
 namespace AchievementsAccounting
 {
@@ -29,9 +30,9 @@ namespace AchievementsAccounting
         Account account;
         public MainWindow(Account account)
         {
-            userBL = new UserBL();
-            accountBL = new AccountBL();
-            achievementBL = new AchievementBL();
+            userBL = DependencyResolver.Instance.UserBL;
+            accountBL = DependencyResolver.Instance.AccountBL;
+            achievementBL = DependencyResolver.Instance.AchievementBL;
             this.account = account;
             InitializeComponent();
             accountsListBox.ItemsSource = accountBL.GetAllAccounts();
@@ -68,8 +69,21 @@ namespace AchievementsAccounting
                 Account account = (Account)accountsListBox.SelectedItem;
                 User user = userBL.GetUserByID(account.UserID);
                 EditUserWindow editUserWindow = new EditUserWindow(user, account);
+                editUserWindow.Closing += (sender1, e1) =>
+                {
+                    user = editUserWindow.newUser;
+                    account = editUserWindow.newAccount;
+                };
+                //Открывает форму на просмотр
                 editUserWindow.ShowDialog();
                 accountsListBox.ItemsSource = accountBL.GetAllAccounts();
+                userInfoTextBox.Text = $"Информация о пользователе: \n" +
+                        $"Имя: {user.Name} \n" +
+                        $"Дата рождения: {user.Birthday.ToShortDateString()} \n" +
+                        $"О себе: {user.Description} \n" +
+                        $"Логин: {account.UserLogin} \n" +
+                        $"Пароль: {account.UserPassword} \n" +
+                        $"Роль: {account.UserRole} \n";
             }
             else
             {
@@ -119,7 +133,14 @@ namespace AchievementsAccounting
             {
                 Achievement achievement = (Achievement)achievementsListBox.SelectedItem;
                 EditAchievementWindow editAchievementWindow = new EditAchievementWindow(achievement);
+                editAchievementWindow.Closing += (sender1, e1) =>
+                {
+                    achievement = editAchievementWindow.newAchievement;
+                };
                 editAchievementWindow.ShowDialog();
+                achievementInfoTextBox.Text = $"Информация о достижении: \n" +
+                    $"Название: {achievement.Name} \n" +
+                    $"Описание: {achievement.Description} \n";
                 achievementsListBox.ItemsSource = achievementBL.GetAllAchievements();
             }
             else
@@ -142,7 +163,16 @@ namespace AchievementsAccounting
         private void showProfileButton_Click(object sender, RoutedEventArgs e)
         {
             UserProfileWindow userProfileWindow = new UserProfileWindow(account);
+            userProfileWindow.signOutButton.Click += (sender1, e1) =>
+            {
+                Close();
+            };
+            userProfileWindow.Closed += (sender1, e1) =>
+            {
+                Show();
+            };
             userProfileWindow.Show();
+            Hide();
         }
 
        

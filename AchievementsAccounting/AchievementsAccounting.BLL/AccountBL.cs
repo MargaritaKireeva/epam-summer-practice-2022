@@ -10,9 +10,9 @@ namespace AchievementsAccounting.BLL
     public class AccountBL : IAccountBL
     {
         private IAccountDAO accountDAO;
-        public AccountBL()
+        public AccountBL(IAccountDAO accountDAO)
         {
-            accountDAO = new AccountDAO();
+            this.accountDAO = accountDAO;
         }
         public void AddAccount(Account account)
         {

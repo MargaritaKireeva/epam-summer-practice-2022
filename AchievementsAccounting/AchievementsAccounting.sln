@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C7BB70
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AchievementsAccounting.Entities", "AchievementsAccounting.Entities\AchievementsAccounting.Entities.csproj", "{3AADAA0C-B4FA-437F-B0EC-74B999D44869}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AchievementsAccounting.Dependencies", "AchievementsAccounting.Dependencies\AchievementsAccounting.Dependencies.csproj", "{7D30E1AA-F3B2-4777-A54D-2B8D8B5805B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{3AADAA0C-B4FA-437F-B0EC-74B999D44869}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AADAA0C-B4FA-437F-B0EC-74B999D44869}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AADAA0C-B4FA-437F-B0EC-74B999D44869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D30E1AA-F3B2-4777-A54D-2B8D8B5805B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D30E1AA-F3B2-4777-A54D-2B8D8B5805B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D30E1AA-F3B2-4777-A54D-2B8D8B5805B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D30E1AA-F3B2-4777-A54D-2B8D8B5805B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{9E777667-BF4E-424A-B6CB-FB7C80D685A2} = {34A09E7C-473C-4974-AEA2-A3018DCC4E6E}
 		{91DBC5FC-58AD-41C9-A822-383D3A08B9C1} = {34A09E7C-473C-4974-AEA2-A3018DCC4E6E}
 		{3AADAA0C-B4FA-437F-B0EC-74B999D44869} = {C7BB70D0-8020-4EED-BFB1-CB7FE9310F5F}
+		{7D30E1AA-F3B2-4777-A54D-2B8D8B5805B5} = {C7BB70D0-8020-4EED-BFB1-CB7FE9310F5F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A5EA6816-5F2F-46D6-AD2E-A974ED768112}

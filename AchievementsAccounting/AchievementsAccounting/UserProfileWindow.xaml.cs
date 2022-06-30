@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using AchievementsAccounting.BLL.Interfaces;
 using AchievementsAccounting.BLL;
 using AchievementsAccounting.Entities;
+using AchievementsAccounting.Dependencies;
 
 namespace AchievementsAccounting
 {
@@ -30,10 +31,10 @@ namespace AchievementsAccounting
         User user;
         public UserProfileWindow(Account account)
         {
-            accountBL = new AccountBL();
-            userBL = new UserBL();
-            achievementBL = new AchievementBL();
-            achievementUserConnectionBL = new AchievementUserConnectionBL();
+            userBL = DependencyResolver.Instance.UserBL;
+            accountBL = DependencyResolver.Instance.AccountBL;
+            achievementBL = DependencyResolver.Instance.AchievementBL;
+            achievementUserConnectionBL = DependencyResolver.Instance.AchievementUserConnectionBL;
             this.account = account;
             user = userBL.GetUserByID(account.UserID);
             InitializeComponent();

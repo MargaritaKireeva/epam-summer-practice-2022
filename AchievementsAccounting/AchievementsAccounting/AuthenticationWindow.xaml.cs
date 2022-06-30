@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using AchievementsAccounting.BLL.Interfaces;
 using AchievementsAccounting.BLL;
 using AchievementsAccounting.Entities;
+using AchievementsAccounting.Dependencies;
 
 namespace AchievementsAccounting
 {
@@ -25,7 +26,7 @@ namespace AchievementsAccounting
         private IAccountBL accountBL;
         public AuthenticationWindow()
         {
-            accountBL = new AccountBL();
+            accountBL = DependencyResolver.Instance.AccountBL;
             InitializeComponent();
         }
 

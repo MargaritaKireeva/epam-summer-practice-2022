@@ -152,16 +152,14 @@
       <Project>{9e777667-bf4e-424a-b6cb-fb7c80d685a2}</Project>
       <Name>AchievementsAccounting.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AchievementsAccounting.Dependencies\AchievementsAccounting.Dependencies.csproj">
+      <Project>{7d30e1aa-f3b2-4777-a54d-2b8d8b5805b5}</Project>
+      <Name>AchievementsAccounting.Dependencies</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AchievementsAccounting.Entities\AchievementsAccounting.Entities.csproj">
       <Project>{3aadaa0c-b4fa-437f-b0ec-74b999d44869}</Project>
       <Name>AchievementsAccounting.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="searchmagnifierinterfacesymbol1_79893.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="iconfinder-search-4341327_120553.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

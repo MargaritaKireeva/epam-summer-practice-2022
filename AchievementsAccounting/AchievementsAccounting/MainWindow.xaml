@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AchievementsAccounting"
         mc:Ignorable="d"
-        Title="MainWindow" Height="505.615" Width="822.348">
+        Title="Главное" Height="505.615" Width="822.348">
     <Grid>
         <Grid.Background>
             <ImageBrush/>
@@ -23,7 +23,7 @@
         <TextBox x:Name="achievementInfoTextBox" HorizontalAlignment="Left" Height="168" Margin="572,283,0,0" TextWrapping="Wrap" Text="Информация о достижении:                  Выберите достижение" VerticalAlignment="Top" Width="203" FontSize="14" IsReadOnly="True"/>
         <Label Content="Пользователи" HorizontalAlignment="Left" Margin="299,31,0,0" VerticalAlignment="Top" FontSize="14"/>
         <Label Content="Достижения" HorizontalAlignment="Left" Margin="299,283,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Button x:Name="showProfileButton" Content="Показать профиль" HorizontalAlignment="Left" Margin="29,207,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="showProfileButton_Click"/>
+        <Button x:Name="showProfileButton" Content="Показать мой профиль" HorizontalAlignment="Left" Margin="29,207,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="showProfileButton_Click"/>
         <TextBox x:Name="searchAchievementTextBox" HorizontalAlignment="Left" Height="32" Margin="299,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" FontSize="14" Text="(Искать достижение)" GotFocus="searchAchievementTextBox_GotFocus"/>
         <Button x:Name="searchAchievementButton" Content="Поиск" HorizontalAlignment="Left" Margin="510,246,0,0" VerticalAlignment="Top" Width="53" Height="32" FontSize="14" RenderTransformOrigin="0.024,0.452" Click="searchAchievementButton_Click"/>
         <Button x:Name="showAllAchievementsButton" Content="Показать все достижения" HorizontalAlignment="Left" Margin="299,431,0,0" VerticalAlignment="Top" Width="182" Height="30" FontSize="14" Click="showAllAchievementsButton_Click"/>

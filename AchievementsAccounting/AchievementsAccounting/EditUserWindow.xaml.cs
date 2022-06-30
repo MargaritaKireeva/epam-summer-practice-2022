@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AchievementsAccounting.Dependencies;
 
 namespace AchievementsAccounting
 {
@@ -30,8 +31,8 @@ namespace AchievementsAccounting
         public Account newAccount;
         public EditUserWindow(User user, Account account)
         {
-            userBL = new UserBL();
-            accountBL = new AccountBL();
+            userBL = DependencyResolver.Instance.UserBL;
+            accountBL = DependencyResolver.Instance.AccountBL;
             this.user = user;
             this.account = account;
             newUser = user;

@@ -10,9 +10,9 @@ namespace AchievementsAccounting.BLL
     public class AchievementUserConnectionBL : IAchievementUserConnectionBL
     {
         private IAchievementUserConnectionDAO achievementUserConnectionDAO;
-        public AchievementUserConnectionBL()
+        public AchievementUserConnectionBL(IAchievementUserConnectionDAO achievementUserConnectionDAO)
         {
-            achievementUserConnectionDAO = new AchievementUserConnectionDAO();
+            this.achievementUserConnectionDAO = achievementUserConnectionDAO;
         }
         public void AddAchievementUserConnection(int userID, int achievementID)
         {

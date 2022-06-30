@@ -10,9 +10,9 @@ namespace AchievementsAccounting.BLL
     public class AchievementBL : IAchievementBL
     {
         private IAchievementDAO achievementDAO;
-        public AchievementBL()
+        public AchievementBL(IAchievementDAO achievementDAO)
         {
-            achievementDAO = new AchievementDAO();
+            this.achievementDAO = achievementDAO;
         }
         public void AddAchievement(Achievement achievement)
         {

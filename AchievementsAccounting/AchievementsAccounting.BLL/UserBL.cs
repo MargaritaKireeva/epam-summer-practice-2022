@@ -10,9 +10,9 @@ namespace AchievementsAccounting.BLL
     public class UserBL : IUserBL
     {
         private IUserDAO userDAO;
-        public UserBL()
+        public UserBL(IUserDAO userDAO)
         {
-            userDAO = new UserDAO();
+            this.userDAO = userDAO;
         }
         public User AddUser(User user)
         {

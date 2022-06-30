@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using AchievementsAccounting.BLL;
 using AchievementsAccounting.Entities;
 using AchievementsAccounting.BLL.Interfaces;
+using AchievementsAccounting.Dependencies;
 
 namespace AchievementsAccounting
 {
@@ -24,11 +25,13 @@ namespace AchievementsAccounting
     {
         private IAchievementBL achievementBL;
         Achievement achievement;
+        public Achievement newAchievement;
         public EditAchievementWindow(Achievement achievement)
         {
-            achievementBL = new AchievementBL();
+            achievementBL = DependencyResolver.Instance.AchievementBL;
             InitializeComponent();
             this.achievement = achievement;
+            newAchievement = achievement;
             nameTextBox.Text = achievement.Name;
             descriptionTextBox.Text = achievement.Description;
         }
@@ -41,7 +44,7 @@ namespace AchievementsAccounting
                 MessageBox.Show("Введите описание!");
             else
             {
-                Achievement newAchievement = new Achievement(achievement.ID, nameTextBox.Text, descriptionTextBox.Text);
+                newAchievement = new Achievement(achievement.ID, nameTextBox.Text, descriptionTextBox.Text);
                 achievementBL.EditAchievement(newAchievement);
                 Close();
             }

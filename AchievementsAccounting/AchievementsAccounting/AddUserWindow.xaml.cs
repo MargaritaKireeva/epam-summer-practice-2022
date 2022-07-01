@@ -55,9 +55,10 @@ namespace AchievementsAccounting
                 User user = new User(nameTextBox.Text, (DateTime)birthdayDatePiker.SelectedDate, description);
                 user = userBL.AddUser(user);
                 Account account = new Account(user.ID, loginTextBox.Text, passwordBox.Password, roleComboBox.Text);
-                accountBL.AddAccount(account);
-                MessageBox.Show("Пользователь удачно зарегистрирован!");
-                Close();
+                string message = accountBL.AddAccount(account);               
+                MessageBox.Show(message);
+                if (message == "Пользователь удачно зарегистрирован!")
+                    Close();
             }            
         }
     }

@@ -53,11 +53,17 @@ namespace AchievementsAccounting
             {
                 userBL.RemoveUser(((Account)accountsListBox.SelectedItem).UserID);
                 accountsListBox.ItemsSource = accountBL.GetAllAccounts();
+                if (!accountBL.GetAllAccounts().Contains(account))
+                {
+                    MessageBox.Show("Вы удалили свой аккаунт!");
+                    Close();
+                }                   
             }
             else
             {
                 MessageBox.Show("Чтобы удалить пользователя, выберите его в списке!");
             }
+            
         }
 
        

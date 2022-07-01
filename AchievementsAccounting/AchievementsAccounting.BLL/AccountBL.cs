@@ -14,9 +14,9 @@ namespace AchievementsAccounting.BLL
         {
             this.accountDAO = accountDAO;
         }
-        public void AddAccount(Account account)
+        public string AddAccount(Account account)
         {
-            accountDAO.AddAccount(account);
+            return accountDAO.AddAccount(account);
         }
         public void EditAccount(Account account)
         {

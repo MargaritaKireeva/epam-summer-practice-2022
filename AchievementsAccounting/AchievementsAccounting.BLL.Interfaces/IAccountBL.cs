@@ -6,7 +6,7 @@ namespace AchievementsAccounting.BLL.Interfaces
 {
     public interface IAccountBL
     {
-        void AddAccount(Account account);
+        string AddAccount(Account account);
         void RemoveAccount(int id);
         void EditAccount(Account account);
         IEnumerable<Account> GetAllAccounts();

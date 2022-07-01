@@ -6,7 +6,7 @@ namespace AchievementsAccounting.DAL.Interfaces
 {
     public interface IAccountDAO
     {
-        void AddAccount(Account account);
+        string AddAccount(Account account);
         void RemoveAccount(int id);
         void EditAccount(Account account);
         IEnumerable<Account> GetAllAccounts();

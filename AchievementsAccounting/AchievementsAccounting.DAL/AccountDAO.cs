@@ -12,7 +12,7 @@ namespace AchievementsAccounting.DAL
     {
         private string _connectionString = ConfigurationManager.ConnectionStrings["Connect"].ConnectionString;
 
-        public void AddAccount(Account account)
+        public string AddAccount(Account account)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -24,7 +24,15 @@ namespace AchievementsAccounting.DAL
                 cmd.Parameters.AddWithValue(@"UserPassword", account.UserPassword);
                 cmd.Parameters.AddWithValue(@"UserRole", account.UserRole);
                 connection.Open();
-                cmd.ExecuteNonQuery();
+                try 
+                {
+                    cmd.ExecuteNonQuery();
+                    return "Пользователь удачно зарегистрирован!";
+                } catch(SqlException e)
+                {
+                    return e.Message;
+                }
+                
             }
         }
         public void EditAccount(Account account)

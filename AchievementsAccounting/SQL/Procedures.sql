@@ -76,7 +76,7 @@ SET Name = @Name, [Description] = @Description
 WHERE ID = @ID
 GO
 
-ALTER PROCEDURE GetAllAchievements
+CREATE PROCEDURE GetAllAchievements
 AS 
 SELECT * FROM Achievements
 GO
@@ -107,7 +107,7 @@ GO
 --WHERE UserID = @UserID AND AchievementID = @OldAchievementID
 --GO
 
-ALTER PROCEDURE GetAllAchievementsByUser
+CREATE PROCEDURE GetAllAchievementsByUser
 @UserID INT
 AS 
 SELECT ach.ID, ach.Name, ach.[Description]
@@ -122,6 +122,9 @@ CREATE PROCEDURE InsertAccount
 @UserPassword nvarchar(15),
 @UserRole nvarchar(20)
 AS 
+IF (EXISTS(SELECT * FROM Accounts WHERE UserLogin = @UserLogin))
+RAISERROR('ѕользователь с таким логином уже существует!', 16, 1)
+ELSE
 INSERT INTO Accounts
 VALUES(@UserID, @UserLogin, @UserPassword, @UserRole)
 GO
@@ -167,7 +170,7 @@ SELECT * FROM Accounts
 WHERE UserLogin = @UserLogin AND UserPassword = @UserPassword
 GO
 
-ALTER PROCEDURE SearchAchievementByDescription
+CREATE PROCEDURE SearchAchievementByDescription
 @Description varchar(255)
 AS
 SELECT * FROM Achievements WHERE [Description] LIKE '%' + @Description + '%'

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AchievementsAccounting"
         mc:Ignorable="d"
-        Title="Профиль" Height="493.679" Width="868.059">
+        Title="Профиль" Height="493.679" Width="868.059" Icon="trophy_award_icon_148758.png">
     <Grid>
         <Button x:Name="removeUserButton" Content="Удалить аккаунт" HorizontalAlignment="Left" Margin="463,219,0,0" VerticalAlignment="Top" Width="150" Height="32" FontSize="14" Click="removeUserButton_Click"/>
         <Button x:Name="editUserButton" Content="Редактировать информацию" HorizontalAlignment="Left" Margin="631,219,0,0" VerticalAlignment="Top" Width="200" Height="32" FontSize="14" Click="editUserButton_Click"/>

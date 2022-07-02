@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AchievementsAccounting"
         mc:Ignorable="d"
-        Title="Регистрация нового пользователя" Height="450" Width="800">
+        Title="Регистрация нового пользователя" Height="450" Width="800" Icon="trophy_award_icon_148758.png">
     <Grid>
         <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="32" Margin="289,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" FontSize="14"/>
         <Label Content="Имя" HorizontalAlignment="Left" Margin="122,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.269,-0.407" Height="32" Width="94" FontSize="14"/>

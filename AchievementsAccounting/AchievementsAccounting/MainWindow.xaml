@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AchievementsAccounting"
         mc:Ignorable="d"
-        Title="Главное" Height="505.615" Width="822.348">
+        Title="Главное" Height="505.615" Width="822.348" Icon="trophy_award_icon_148758.png">
     <Grid>
         <Grid.Background>
             <ImageBrush/>

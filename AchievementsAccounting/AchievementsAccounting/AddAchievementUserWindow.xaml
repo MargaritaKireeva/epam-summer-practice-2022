@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AchievementsAccounting"
         mc:Ignorable="d"
-        Title="Добавить себе достижение" Height="450" Width="683.768">
+        Title="Добавить себе достижение" Height="450" Width="683.768" Icon="trophy_award_icon_148758.png">
     <Grid>
         <ListBox x:Name="achievementsListBox" HorizontalAlignment="Left" Height="256" Margin="45,89,0,0" VerticalAlignment="Top" Width="182" SelectionChanged="achievementsListBoxSelectionChanged" RenderTransformOrigin="0.699,1.117"/>
         <TextBox x:Name="achievementInfoTextBox" HorizontalAlignment="Left" Height="161" Margin="256,89,0,0" TextWrapping="Wrap" Text="Информация о достижении:                  Выберите достижение" VerticalAlignment="Top" Width="182" FontSize="14" IsReadOnly="True"/>
